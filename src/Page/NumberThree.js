@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 
 const NumberThree = () => {
   const [error, setError] = useState(null);
