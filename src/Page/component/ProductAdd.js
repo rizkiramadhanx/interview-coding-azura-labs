@@ -14,8 +14,11 @@ const ProductAdd = ({ formData, handleSubmit, handleChange, isEdit }) => {
             <label className="block text-sm font-bold mb-2" htmlFor="nama">
               Nama
             </label>
+            {isEdit && <div className="text-3xl">{formData.nama}</div>}
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              className={`shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline ${
+                isEdit ? "invisible" : "visible"
+              }`}
               id="nama"
               value={formData.nama}
               type="text"

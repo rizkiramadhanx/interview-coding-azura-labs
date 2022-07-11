@@ -34,8 +34,15 @@ const NumberTwo = () => {
 
     newDatas = [formData, ...datas];
     if (isEdit) {
-      newDatas.splice(1, 1);
-      setDatas(newDatas);
+      const filteredArr = newDatas.reduce((acc, current) => {
+        const x = acc.find((item) => item.nama === current.nama);
+        if (!x) {
+          return acc.concat([current]);
+        } else {
+          return acc;
+        }
+      }, []);
+      setDatas(filteredArr);
       return;
     }
 
